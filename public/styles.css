@@ -31,3 +31,15 @@ a {
     margin-top: 50px;
     margin-bottom: 50px;
   }
+
+  .nav-pills li:active{
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+  }
+
+  .nav-pills {
+    margin-bottom: 20px;
+    color: grey;
+    padding: 8px;
+  }
