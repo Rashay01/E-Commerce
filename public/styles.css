@@ -1,5 +1,5 @@
 a {
-    color: grey;
+    color: black;
 }
 
 a:hover{
@@ -16,6 +16,9 @@ a:hover{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+.nav-link{
+  color:white;
 }
 
 .card-content {
@@ -52,24 +55,8 @@ img{
     margin-bottom: 50px;
   }
 
-  .nav-pills li:active{
-    color: white;
-    background-color: black;
-    border-radius: 8px;
-  }
-
-  .nav-pills {
-    margin-bottom: 20px;
-    color: grey;
-    padding: 8px;
-  }
   .nav-pills{
     margin-bottom: 20px;
-  }
-
-  .nav-pills li:active{
-    border-color: black;
-    border-radius: 8px;
   }
 
   .nav-pills li {
@@ -77,6 +64,11 @@ img{
     color: grey;
     padding: 8px;
     margin: 2px;
+  }
+
+  .nav-pills li:hover{
+    border: 1px solid black;
+    border-radius: 8px;
   }
 
 
