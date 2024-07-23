@@ -71,18 +71,27 @@ exports.updateCartData = (req, res) => {
 
 
   exports.saveCartData = (req, res) => {
-    const { productId, quantity, totalPerProduct} = req.body;
+    const { productId, quantity, totalPerProduct } = req.body;
     const pool = req.pool;
-    const sql = `INSERT INTO cart (productId, quantity, totalPerProduct) VALUES (?, ?, ?)`;
-    req.pool.query(sql, [productId, quantity, totalPerProduct], (err, results) => {
-      if (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Error saving book data' });
-        return;
-      }
-      res.json({
-        status: 'success',
-        data: { ...req.body },
-      });
+
+    // SQL query for inserting or updating the cart item
+    const sql = `
+        INSERT INTO cart (productId, quantity, totalPerProduct)
+        VALUES (?, ?, ?)
+        ON DUPLICATE KEY UPDATE
+            quantity = quantity + VALUES(quantity),
+            totalPerProduct = VALUES(totalPerProduct);
+    `;
+
+    pool.query(sql, [productId, quantity, totalPerProduct], (err, results) => {
+        if (err) {
+            console.error(err);
+            res.status(500).json({ error: 'Error saving cart data' });
+            return;
+        }
+        res.json({
+            status: 'success',
+            data: { ...req.body },
+        });
     });
-  };
+};

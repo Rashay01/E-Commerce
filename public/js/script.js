@@ -1,7 +1,7 @@
 $(document).ready(function() {
     function loadCartData() {
         $.ajax({
-            url: '/api/cart',
+            url: '/api/cart/productInfo',
             method: 'GET',
             success: function(response) {
                 if (response.status === 'success') {
@@ -20,7 +20,7 @@ $(document).ready(function() {
                                 <p>Quantity: ${item.quantity}</p>
                                 <p>Total per Product: R${parseFloat(item.totalPerProduct).toFixed(2)}</p>
                                 <p>Item Total: R${itemTotal.toFixed(2)}</p>
-                                <button class="remove-btn" data-id="${item.id}">Remove</button>
+                                <button class="remove-btn" data-id="${item.cart_id}">Remove</button>
                             </li>
                         `;
                         cartList.append(listItem);
