@@ -54,7 +54,7 @@ exports.updateCartData = (req, res) => {
     const { productId, quantity, totalPerProduct} = req.body;
     const pool = req.pool;
     const sql =
-      'UPDATE book_data SET productId = ?, quantity = ?, totalPerProduct = ?  WHERE id = ?';
+      'UPDATE cart SET productId = ?, quantity = ?, totalPerProduct = ?  WHERE id = ?';
     pool.query(sql, [productId, quantity, totalPerProduct, id], (err, results) => {
       if (err) {
         console.error(err);
