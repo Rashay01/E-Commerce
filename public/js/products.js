@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <h5 class="card-title">${product.description}</h5>
                             <p class="card-text">Price: R ${product.price}</p>
                         </div>
+                        <button id="addToCartBtn" class="addBtn">Add to Cart</button>
                     `;
                     productsList.appendChild(card);
                 });
