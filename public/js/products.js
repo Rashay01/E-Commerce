@@ -10,13 +10,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 products.forEach(product => {
                     const card = document.createElement('div');
                     card.classList.add('card');
-
                     card.innerHTML = `
-                        <img src="${product.img}" class="card-img-top" alt="Product Image">
-                        <div class="card-body">
-                            <h5 class="card-title">${product.description}</h5>
-                            <p class="card-text">Price: R ${product.price}</p>
-                        </div>
+                        <a href="product.html?id=${product.id}">
+                            <img src="${product.img}" class="card-img-top" alt="Product Image">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.description}</h5>
+                                <p class="card-text">Price: R ${product.price}</p>
+                            </div>
+                        </a>
                         <button id="addToCartBtn" class="addBtn">Add to Cart</button>
                     `;
                     productsList.appendChild(card);
