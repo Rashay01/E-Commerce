@@ -10,4 +10,19 @@ const getProductList = (req, res) => {
     });
 };
 
-module.exports = { getProductList };
+const getProductById = (req, res) => {
+    const { id } = req.params;
+    const query = 'SELECT * FROM product WHERE id = ?';
+    
+    req.pool.query(query, [id], (error, results) => {
+        if (error) {
+            res.status(500).json({ error: 'Database error' });
+        } else if (results.length === 0) {
+            res.status(404).json({ error: 'Product not found' });
+        } else {
+            res.json(results[0]);
+        }
+    });
+};
+
+module.exports = { getProductList, getProductById };
