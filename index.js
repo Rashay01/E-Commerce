@@ -4,7 +4,6 @@ const path = require('node:path');
 const mysql = require('mysql2');
 const cartRoutes = require('./routes/cartRoutes');
 
-
 const app = express();
 const port = 3000;
 
@@ -16,6 +15,11 @@ const pool = mysql.createPool({
     password: 'admin123',
     database: 'ecommerce'
 })
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'cart.html'));
+});
 
 app.use((req, res, next) => {
     req.pool = pool;

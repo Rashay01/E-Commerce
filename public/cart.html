@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/script.js" type="text/javascript"></script>
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .container {
+            display: flex;
+            height: 100vh; 
+        }
+
+        .cart-items, .cart-summary {
+            flex: 1;
+        }
+
+        .cart-item img {
+            max-width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cart-items">
+            <h1>Shopping Cart</h1>
+            <ul id="cart-list"></ul>
+        </div>
+        <div class="cart-summary">
+            <h1>Summary</h1>
+            <p id="order-total">Order Total: R0.00</p>
+            <button id="checkout-button">Checkout</button>
+        </div>
+    </div>
+</body>
+</html>
