@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const productsList = document.getElementById('productsList');
+
     function fetchProducts() {
         $.ajax({
-            url: '/products',
+            url: '/product',
             method: 'GET',
             success: function(products) {
                 productsList.innerHTML = '';  
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <p class="card-text">Price: R ${product.price}</p>
                         </div>
                     `;
-                    container.appendChild(card);
+                    productsList.appendChild(card);
                 });
             },
             error: function(xhr, status, error) {
@@ -25,5 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
     fetchProducts();
 });
