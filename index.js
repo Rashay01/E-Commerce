@@ -2,13 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('node:path');
 const mysql = require('mysql2');
+const cartRoutes = require('./routes/cartRoutes');
 
 
 const app = express();
 const port = 3000;
 
-app.use(bodyParser.urlencoded({extended: false})); // to parse the form data
-app.use(bodyParser.json()); // Always Always keep it on top of middleware
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json()); 
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
     next();
 })
 
+app.use('/api/carts', cartRoutes);
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
