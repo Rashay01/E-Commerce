@@ -11,7 +11,6 @@ CREATE TABLE category (
 -- Creating the product table
 CREATE TABLE product (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    quantity INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     categoryId INT,
     description TEXT,
