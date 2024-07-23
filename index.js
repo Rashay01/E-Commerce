@@ -22,7 +22,7 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use('/api/carts', cartRoutes);
+app.use('/api/cart', cartRoutes);
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
