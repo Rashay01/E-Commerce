@@ -10,9 +10,9 @@ a {
     align-items: center;
 }
 .product-card {
-  display: flex;
-  flex-direction: row;
-  gap:20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 img{
