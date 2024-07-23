@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('node:path');
 const mysql = require('mysql2');
 const cartRoutes = require('./routes/cartRoutes');
+const orderHistoryRoutes = require('./routes/orderHistoryRoute');
 
 
 const app = express();
@@ -23,6 +24,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/api/cart', cartRoutes);
+app.use('/api/order-history', orderHistoryRoutes);
 
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);

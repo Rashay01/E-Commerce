@@ -11,7 +11,6 @@ CREATE TABLE category (
 -- Creating the product table
 CREATE TABLE product (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    quantity INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     categoryId INT,
     description TEXT,
@@ -29,6 +28,9 @@ CREATE TABLE orderHistory (
     orderStatus VARCHAR(50) NOT NULL,
     FOREIGN KEY (productId) REFERENCES product(id)
 );
+
+ALTER TABLE orderHistory
+ADD COLUMN orderNumber VARCHAR(200) NOT NULL;
 
 -- Creating the cart table
 CREATE TABLE cart (
