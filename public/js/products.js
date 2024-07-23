@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <p class="card-text">Price: R ${product.price}</p>
                             </div>
                         </a>
-                         <button class="addBtn"  data-product-id="${product.id}" data-product-description="${product.description}" data-product-price="${product.price}">Add to2 Cart</button>
+                         <button class="addBtn"  data-product-id="${product.id}" data-product-description="${product.description}" data-product-price="${product.price}">Add to Cart</button>
                     `;
                     productsList.appendChild(card);
                 });
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <p class="card-text">Price: R ${product.price}</p>
                             </div>
                         </a>
-                         <button class="addBtn"  data-product-id="${product.id}" data-product-description="${product.description}" data-product-price="${product.price}">Add to2 Cart</button>
+                         <button class="addBtn"  data-product-id="${product.id}" data-product-description="${product.description}" data-product-price="${product.price}">Add to Cart</button>
                         `;
                         productsList.appendChild(card);
                     });
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var description = $(this).data('product-description');
             var price = $(this).data('product-price');
             addToCart(id,description, price);
-            alert('product '+description+' In Car')
+            alert('Product '+description+' In Cart')
         });
     })
 });
