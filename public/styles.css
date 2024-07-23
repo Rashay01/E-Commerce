@@ -1,0 +1,33 @@
+a {
+    color: white;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+  .card {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    background: inherit; 
+    backdrop-filter: blur(10px); 
+    border-radius: 10px;
+    max-width: fit-content;
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 34px;
+    color: #333; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
