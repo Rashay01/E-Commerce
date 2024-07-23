@@ -1,0 +1,58 @@
+a {
+    color: white;
+}
+
+.name1{
+    font-size: 80px;
+    margin: 0px;
+}
+.descrip{
+    margin: 0px;
+    width: 60%;
+}
+.content {
+    margin: 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.box1 {
+    flex: 1;
+    /* Ensures both boxes take up equal space */
+    box-sizing: border-box;
+    /* Includes padding and border in the box's total width */
+}
+
+.box2 {
+    flex: 2;
+    /* Ensures both boxes take up equal space */
+    padding: 20px;
+    margin-left: 10px;
+    box-sizing: border-box;
+    /* Includes padding and border in the box's total width */
+}
+.prodImg{
+    width: 80%;
+    border-radius: 15px;
+}
+.prodCont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 25%;
+    margin: 0px;
+}
+
+.prod1 {
+    margin: 0px;
+}
+.txt{
+    margin: 5px;
+    color: rgb(133, 133, 133);
+    font-weight: 700;
+}
+.catergoryProd{
+    font-size: 15px;
+    color: rgb(133, 133, 133);
+}
