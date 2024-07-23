@@ -1,0 +1,84 @@
+
+.headlin {
+    font-size: 8vw;
+    line-height: 1.0;
+}
+
+.content {
+    margin: 60px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.box1 {
+    flex: 2.5;
+    /* Ensures both boxes take up equal space */
+    padding: 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    /* Includes padding and border in the box's total width */
+}
+
+.box2 {
+    flex: 2;
+    /* Ensures both boxes take up equal space */
+    padding: 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    /* Includes padding and border in the box's total width */
+}
+
+.box2 {
+    display: flex;
+    justify-content: center;
+}
+
+.card-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    /* Adjust as needed */
+    gap: 20px;
+    /* Spacing between cards */
+}
+
+.card1 {
+    flex: 1 1 calc(50% - 20px);
+    /* 50% width minus the gap */
+    box-sizing: border-box;
+    background-color: #f0f0f0;
+    /* Optional: for visual purposes */
+    padding: 20px;
+    border: 1px solid #ccc;
+    /* Optional: for visual purposes */
+}
+
+.card1 img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.imgx {
+    margin-top: 20px;
+    width: 223px;
+    flex-shrink: 0;
+    border-radius: 31px;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.imgx {
+    display: block;
+    /* Ensures the image does not have extra space below */
+}
+
+a {
+    color: white;
+}
