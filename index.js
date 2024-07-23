@@ -3,11 +3,12 @@ const path = require('path');
 const mysql = require('mysql2');
 const categoryRoutes = require('./routes/categoryRoutes');
 const productRoutes = require('./routes/productRoutes');
+const cartRoutes = require('./routes/cartRoutes');
 
 const app = express();
 const port = 3000;
 
-app.use(express.json()); // Middleware to parse JSON bodies
+app.use(express.json());
 
 const pool = mysql.createPool({
     host: 'localhost',
@@ -21,8 +22,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/category', categoryRoutes);
 app.use('/product', productRoutes);
+app.use('/category', categoryRoutes);
+app.use('/api/cart', cartRoutes);
 app.use('/', express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => {
