@@ -8,7 +8,10 @@ $(document).ready(function() {
                     let cartList = $('#cart-list');
                     cartList.empty();
                     let total = 0;
-
+                    if(response.data.length === 0){
+                        alert('Cart is empty!');
+                        window.location.href = 'allproducts.html';
+                    }
                     response.data.forEach(item => {
                         let itemTotal = item.quantity * parseFloat(item.totalPerProduct);
                         total += itemTotal;
@@ -65,6 +68,18 @@ $(document).ready(function() {
     $(document).on('click', '.remove-btn', function() {
         const id = $(this).data('id');
         removeCartItem(id);
+    });
+
+    $('#to-payment-button').on('click', function() {
+        window.location.href = '/paymentGateway.html';
+    });
+
+    $('#complete-payment-button').on('click', function() {
+        window.location.href = '/success.html';
+    });
+
+    $('#back-home').on('click', function() {
+        window.location.href = '/home.html';
     });
 });
 
