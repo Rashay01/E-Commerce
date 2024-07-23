@@ -9,6 +9,13 @@ a {
     flex-direction: column;
     align-items: center;
 }
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
 .product-card {
   display: flex;
   flex-direction: row;
@@ -37,6 +44,17 @@ img{
     margin-bottom: 50px;
   }
 
+  .nav-pills li:active{
+    color: white;
+    background-color: black;
+    border-radius: 8px;
+  }
+
+  .nav-pills {
+    margin-bottom: 20px;
+    color: grey;
+    padding: 8px;
+  }
   .nav-pills{
     margin-bottom: 20px;
   }
