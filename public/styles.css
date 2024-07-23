@@ -1,7 +1,15 @@
 a {
-    color: white;
+    color: grey;
 }
 
+a:hover{
+  color: grey;
+  text-decoration: none;
+}
+
+.navbar-brand{
+  color: white;
+}
 
 .content {
     display: flex;
