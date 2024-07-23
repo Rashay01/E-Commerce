@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function fetchCategories() {
         $.ajax({
-            url: '/home',  
+            url: '/category',  
             method: 'GET',
             success: function(categories) {
                 categories.forEach(category => {
