@@ -39,6 +39,7 @@ CREATE TABLE cart (
     FOREIGN KEY (productId) REFERENCES product(id)
 );
 
+ALTER TABLE cart ADD UNIQUE (productId);
 
 INSERT INTO category (name, description) VALUES
 ('Jeans', 'Various styles and fits of jeans'),
