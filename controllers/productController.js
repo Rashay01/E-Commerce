@@ -12,7 +12,7 @@ const getProductList = (req, res) => {
 
 const getProductById = (req, res) => {
     const { id } = req.params;
-    const query = 'SELECT * FROM product WHERE id = ?';
+    const query = 'SELECT * FROM product WHERE categoryId = ?';
     
     req.pool.query(query, [id], (error, results) => {
         if (error) {
@@ -20,7 +20,7 @@ const getProductById = (req, res) => {
         } else if (results.length === 0) {
             res.status(404).json({ error: 'Product not found' });
         } else {
-            res.json(results[0]);
+            res.json(results);
         }
     });
 };
