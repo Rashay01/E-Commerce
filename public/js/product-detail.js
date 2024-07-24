@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function fetchProductDetails() {
         $.ajax({
-            url: `/product/${productId}`,
+            url: `/product/test/${productId}`,
             method: 'GET',
             success: function(product) {
                 document.getElementById('productImg').src = product.img;
