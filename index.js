@@ -11,10 +11,10 @@ const port = 3000;
 app.use(express.json());
 
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '4thIndu5tryR3v',
-    database: 'ecommerce'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME || 'ecommerce'
 });
 
 app.use((req, res, next) => {
